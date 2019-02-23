@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 指定该android 应用的包名，该包名可用于唯一的表示该应用-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.na"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="20"
+        android:targetSdkVersion="21" />
+<!-- 指定android 应用标签、图标 -->
+<!-- 说明该应用的标签Lable为/res/value目录下string.xml文件名为app_name的字符串值 -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <!-- 定义第一个组件：activity -->
+         <!-- 声明应用自身拥有的权限  声明该应用既有打电话的权限-->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <!-- 说明该应用的标签Lable为/res/value目录下string.xml文件名为app_name的字符串值 -->
+            <intent-filter>
+                <!-- 指定activity 是程序的入口 -->
+                <action android:name="android.intent.action.MAIN" />
+                <!-- 指定加载该应用时运行该activity -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    <!-- 声明应用自身拥有的权限 -->
+<uses-permission android:name="android.permission.SEND_SMS"/>
+</manifest>
